@@ -25,7 +25,7 @@ export default class PathfindingVisualizer extends Component {
       FINISH_NODE_COL: 15,
       mouseIsPressed: false,
       ROW_COUNT: 50,
-      COLUMN_COUNT: 50,
+      COLUMN_COUNT: 60,
       MOBILE_ROW_COUNT: 10,
       MOBILE_COLUMN_COUNT: 20,
       isRunning: false,
@@ -405,7 +405,34 @@ export default class PathfindingVisualizer extends Component {
   render() {
     const { grid, mouseIsPressed } = this.state;
     return (
-      <div>
+      <div className="container">
+        <div className="algorithms">
+          <button onClick={() => this.visualize("BFS")}>
+            <strong>Bread First Search</strong>
+          </button>
+          <button onClick={() => this.visualize("DFS")}>
+            <strong>Depth First Search</strong>
+          </button>
+          <button onClick={() => this.visualize("Dijkstra")}>
+            <strong> Dijkstra's</strong>
+          </button>
+          <button onClick={() => this.visualize("AStar")}>
+            <strong> A*</strong>
+          </button>
+          {this.state.isDesktopView ? (
+            <button onClick={() => this.toggleView()}>
+              <strong>Mobile View</strong>
+            </button>
+          ) : (
+            <button onClick={() => this.toggleView()}>Desktop View</button>
+          )}
+          <button onClick={() => this.clearGrid()}>
+            <strong>Reset Grid</strong>
+          </button>
+          <button onClick={() => this.clearWalls()}>
+            <strong>Reset Walls</strong>
+          </button>
+        </div>
         <nav class="nav"></nav>
         <table
           className="grid-container"
@@ -441,65 +468,6 @@ export default class PathfindingVisualizer extends Component {
             })}
           </tbody>
         </table>
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={() => this.clearGrid()}
-        >
-          Clear Grid
-        </button>
-        <button
-          type="button"
-          className="btn btn-warning"
-          onClick={() => this.clearWalls()}
-        >
-          Clear Walls
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => this.visualize("Dijkstra")}
-        >
-          Dijkstra's
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => this.visualize("AStar")}
-        >
-          A*
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => this.visualize("BFS")}
-        >
-          Bread First Search
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => this.visualize("DFS")}
-        >
-          Depth First Search
-        </button>
-        {this.state.isDesktopView ? (
-          <button
-            type="button"
-            className="btn btn-light"
-            onClick={() => this.toggleView()}
-          >
-            Mobile View
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="btn btn-dark"
-            onClick={() => this.toggleView()}
-          >
-            Desktop View
-          </button>
-        )}
       </div>
     );
   }

@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: serif;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid;
+  border-color: rgb(211, 183, 28);
+  color: rgb(44, 39, 39);
+  margin-bottom: 10px;
+  padding-top: 10px;
+  color: blue;
+}
