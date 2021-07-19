@@ -1,3 +1,35 @@
+# Graph Algorith Visualizer
+
+## [Checkout the App](https://algorithm-visualizer-b9182.web.app/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
